@@ -1,0 +1,146 @@
+/*-----------------
+----< variables >----
+-------------------*/
+:root {
+  --outer-shadow: 3px 3px 3px #bbb;
+  --outer-shadow-0: 0 0 0 #bbb;
+  --inner-shadow: inset 3px 3px 3px #bbb;
+  --transition: all 0.4s cubic-bezier(0.26, 0.1, 0.27, 1.55);
+}
+
+/*-------------
+---< RESET >---
+---------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+/*------------------------
+----< GLOBAL STYLING >----
+--------------------------*/
+
+body {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  background-color: var(--dark-bg);
+  min-height: 100vh;
+  height: 30000px;
+}
+
+.wrapper {
+  position: absolute;
+  right: 0;
+  width: calc(100% - 90px);
+  min-height: 100vh;
+}
+
+.wrapper.active {
+  width: calc(100% - 290px);
+}
+
+.container {
+  padding: 20px;
+  margin: 0 auto;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.outer-shadow {
+  box-shadow: var(--outer-shadow);
+}
+
+.hover-in-shadow {
+  position: relative;
+  z-index: 1;
+}
+
+.hover-in-shadow:hover {
+  box-shadow: var(--outer-shadow-0);
+}
+
+.hover-in-shadow::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transition: var(--transition);
+  z-index: 99;
+}
+
+.hover-in-shadow:hover::before {
+  box-shadow: var(--inner-shadow);
+}
+
+.transition {
+  transition: var(--transition);
+}
+
+/*----------------------
+----< MEDIA QUEIRY >----
+------------------------*/
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* @media (min-width: 768px) {
+  .wrapper.active {
+    width: calc(750px - 300px);
+  }
+}
+@media (min-width: 992px) {
+  .wrapper.active {
+    width: calc(970px - 300px);
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper.active {
+    width: calc(1170px - 300px);
+  }
+} */
