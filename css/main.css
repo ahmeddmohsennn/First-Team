@@ -14,7 +14,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 6%;
+  width: 90px;
   min-height: 100%;
   z-index: 99;
   background-color: var(--text-700);
@@ -22,7 +22,7 @@ nav {
 }
 
 nav.open {
-  width: 20%;
+  width: 280px;
 }
 
 nav ul {
@@ -146,16 +146,21 @@ nav ul li .title {
 -< HEADER START >-
 ------------------*/
 header {
-  width: 100%;
+  width: calc(100% - 90px);
   position: fixed;
   top: 0;
   right: 0;
+}
+
+header .container {
+  position: relative;
 }
 
 /*--< BARS >--*/
 
 header .bars {
   position: relative;
+  left: -150px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -204,7 +209,6 @@ header .bars.open .line.bottom {
 /*--< SEARCH >--*/
 
 header .search {
-  position: relative;
   padding: 10px;
   border-radius: 30px;
   background-color: var(--text-600);
@@ -262,6 +266,238 @@ header .logo a {
 
 /*--------------
 -< HEADER END >-
+----------------*/
+
+/*--------------
+-< HOME START >-
+----------------*/
+.home .container {
+  height: calc(100vh - 100px);
+}
+
+.home .text {
+  color: var(--text-300);
+  justify-content: flex-start;
+  align-content: center;
+  width: 50%;
+  height: 50%;
+}
+
+.home .text h1 {
+  font-size: 70px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.home .text p {
+  font-weight: 400;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.home .text .join {
+  width: 100%;
+}
+
+.home .join a {
+  position: relative;
+  display: inline-block;
+  color: var(--text-300);
+  border: 1px solid var(--text-600);
+  border-radius: 20px;
+  padding: 5px 20px;
+  margin-top: 20px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.home .join a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: var(--transition);
+  box-shadow: 0 0 0 0 var(--text-600);
+  z-index: -9;
+}
+
+.home .join a:hover::before {
+  box-shadow: 0 0 0 300px var(--text-600);
+}
+
+.home .social {
+  margin-top: 30px;
+}
+
+.home .social i {
+  font-size: 1.5rem;
+  color: var(--text-300);
+  padding: 5px;
+}
+
+.home .social i:hover {
+  color: var(--text-600);
+}
+
+.home .img {
+  position: relative;
+  display: block;
+  width: 50%;
+}
+
+.home .img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0005;
+  border-radius: 30px;
+  z-index: 999;
+}
+
+.home img {
+  border-radius: 30px;
+  z-index: -9;
+}
+
+.home .animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -99;
+}
+
+.home .effect_1 {
+  position: absolute;
+  right: 50px;
+  bottom: 150px;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #8a49ff;
+  animation: square 5s linear infinite;
+}
+
+@keyframes square {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.home .effect_2 {
+  position: absolute;
+  top: -170px;
+  right: 40%;
+  width: 100px;
+  height: 100px;
+  border: 10px solid #ff9c07;
+  border-radius: 50%;
+  animation: cyrcle 3s linear infinite alternate;
+}
+
+@keyframes cyrcle {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(30px);
+  }
+}
+
+.home .effect_3 {
+  position: absolute;
+  top: 70%;
+  left: 15%;
+  height: 120px;
+  width: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.home .effect_3 span {
+  width: 5px;
+  height: 5px;
+  background-color: #f48fb1;
+  border-radius: 50%;
+  animation: dots 2s linear infinite alternate;
+}
+
+@keyframes dots {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(30px);
+  }
+}
+
+.home .effect_4 {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 50px;
+  height: 50px;
+}
+
+.home .effect_4 span {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #06d79c;
+  clip-path: polygon(0 48%, 0 100%, 46% 100%);
+  animation: triangle 10s linear infinite;
+}
+
+.home .effect_4::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 50px;
+  height: 50px;
+  background-color: #06d79c6b;
+  clip-path: polygon(0 48%, 0 100%, 46% 100%);
+  animation: triangle 10s linear infinite;
+}
+
+@keyframes triangle {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.home .effect_5 {
+  position: absolute;
+  top: 58%;
+  left: 45%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #9f9478;
+  filter: blur(3px);
+  animation: blurCyrcle 5s linear infinite alternate;
+}
+
+@keyframes blurCyrcle {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.6);
+  }
+}
+
+/*--------------
+-< HOME END >-
 ----------------*/
 
 .scroll-to-top {
