@@ -160,7 +160,7 @@ header .container {
 
 header .bars {
   position: relative;
-  left: -150px;
+  left: -300px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -373,8 +373,8 @@ header .logo a {
 
 .home .effect_1 {
   position: absolute;
-  right: 50px;
-  bottom: 150px;
+  right: 10%;
+  bottom: 15%;
   width: 30px;
   height: 30px;
   border: 3px solid #8a49ff;
